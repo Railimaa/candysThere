@@ -27,6 +27,7 @@
     {
       "devDependencies": false
     }
-  ]
+  ],
+  "class-methods-use-this": "off"
   }
 }

@@ -62,7 +62,7 @@ export default function Card({
           <Item key={item.id} onClick={() => handleOpenModal(item)}>
             <span>{item.name}</span>
             <strong>{(formatCurrency(item.price))}</strong>
-            <div className="kilo">{item.unit}</div>
+            <div className="kilo">{`(${item.unit})`}</div>
           </Item>
         ))}
 
@@ -97,8 +97,8 @@ Card.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      unit: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
+      unit: PropTypes.string,
     }),
   ).isRequired,
 };
