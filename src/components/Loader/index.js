@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
-
 import { Overlay } from './style';
+
 import Spinner from '../Spinner';
 import ReactPortal from '../ReactPortal';
-
 import useAnimetedUnmount from '../../hooks/useAnimatedUnmount';
 
-export function Loader({ isLoading }) {
+export default function Loader({ isLoading }) {
   const { shouldRender, animetedElementRef } = useAnimetedUnmount(isLoading);
 
   if (!shouldRender) {

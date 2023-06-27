@@ -1,48 +1,26 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable react/jsx-no-bind */
 import PropTypes from 'prop-types';
-import { useEffect, useRef, useState } from 'react';
-import formatCurrency from '../../utils/formatCurrency';
 import {
   CardItem,
   Container,
   Title,
   Item,
 } from './style';
+
+import formatCurrency from '../../utils/formatCurrency';
 import Modal from '../Modal';
+import useCard from './useCard';
 
 export default function Card({
   title, subTitle, items, information,
 }) {
-  const [isVisible, setIsVisible] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
-  const titleRef = useRef(null);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  function handleScroll() {
-    const { top } = titleRef.current.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    if (top < windowHeight) {
-      setIsVisible(true);
-    }
-  }
-
-  function handleOpenModal(item) {
-    setModalOpen(true);
-    setSelectedItem(item);
-  }
-
-  function handleCloseModal() {
-    setModalOpen(false);
-  }
+  const {
+    isVisible,
+    modalOpen,
+    selectedItem,
+    titleRef,
+    handleOpenModal,
+    handleCloseModal,
+  } = useCard();
 
   return (
     <Container>
@@ -85,6 +63,7 @@ export default function Card({
           </div>
         </Modal>
       )}
+
     </Container>
   );
 }

@@ -1,21 +1,17 @@
 /* eslint-disable react/jsx-no-bind */
-import {
-  useCallback, useEffect, useMemo, useState,
-} from 'react';
-
-import ProductsService from '../../services/ProductsService';
-import { Loader } from '../../components/Loader';
-
-import CarouselImages from '../../components/CarouselImages';
-
-import PageHeader from '../../components/PageHeader';
 import { Container } from './style';
+
+import Loader from '../../components/Loader';
+import ErrorStatus from '../../components/ErrorStatus';
+import PageHeader from '../../components/PageHeader';
+import CarouselImages from '../../components/CarouselImages';
+import Card from '../../components/Card';
+
+import useSalgados from './useSalgados';
 
 import empadao from '../../assets/images/salgados/empadao.jpeg';
 import empadinha from '../../assets/images/salgados/empadinha.jpeg';
 import quiche from '../../assets/images/salgados/quiche.jpeg';
-import Card from '../../components/Card';
-import ErrorStatus from '../../components/ErrorStatus';
 
 // import queijo from '../../assets/images/salgados/queijo.png';
 // import frango from '../../assets/images/salgados/frango.png';
@@ -23,45 +19,14 @@ import ErrorStatus from '../../components/ErrorStatus';
 // import marguerita from '../../assets/images/salgados/marguerita.png';
 
 export default function Salgados() {
-  const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
-
-  const pies = useMemo(() => products.filter((product) => (
-    product.category.name === 'Tortas'
-  )), [products]);
-
-  const patty = useMemo(() => products.filter((product) => (
-    product.category.name === 'Empadas'
-  )), [products]);
-
-  const quiches = useMemo(() => products.filter((product) => (
-    product.category.name === 'Quiches'
-  )), [products]);
-
-  const loadProducts = useCallback(async () => {
-    try {
-      setIsLoading(true);
-
-      const productsList = await ProductsService.listProducts();
-
-      setHasError(false);
-      setProducts(productsList);
-    } catch {
-      setHasError(true);
-      setProducts([]);
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    loadProducts();
-  }, [loadProducts]);
-
-  function handleTryAgain() {
-    loadProducts();
-  }
+  const {
+    isLoading,
+    hasError,
+    pies,
+    patty,
+    quiches,
+    handleTryAgain,
+  } = useSalgados();
 
   const images = [
     {

@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
+import { Overlay, Container, Footer } from './style';
 
 import ReactPortal from '../ReactPortal';
 import useAnimetedUnmount from '../../hooks/useAnimatedUnmount';
 import LinkWpp from '../LinkWpp';
-
-import { Overlay, Container, Footer } from './style';
 
 export default function Modal({
   visible, title, children, cancelLabel,
@@ -20,7 +19,6 @@ export default function Modal({
     <ReactPortal containerId="modal-root">
 
       <Overlay isLeaving={!visible} ref={animetedElementRef}>
-
         <Container isLeaving={!visible}>
           <h1>{title}</h1>
 
@@ -38,8 +36,8 @@ export default function Modal({
           </Footer>
 
         </Container>
-
       </Overlay>
+
     </ReactPortal>
   );
 }

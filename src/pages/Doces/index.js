@@ -1,63 +1,28 @@
 /* eslint-disable react/jsx-no-bind */
-import {
-  useCallback, useEffect, useMemo, useState,
-} from 'react';
-import CarouselImages from '../../components/CarouselImages';
-
-import PageHeader from '../../components/PageHeader';
-import Card from '../../components/Card';
-
 import { Container } from './style';
+
+import Loader from '../../components/Loader';
+import ErrorStatus from '../../components/ErrorStatus';
+import PageHeader from '../../components/PageHeader';
+import CarouselImages from '../../components/CarouselImages';
+import Card from '../../components/Card';
+import useDoces from './useDoces';
 
 import cupkake from '../../assets/images/doces/cupkake.jpeg';
 import bolo from '../../assets/images/doces/chocolate.jpeg';
 import doce from '../../assets/images/doces/doces.jpeg';
 import docinho from '../../assets/images/doces/docinho.jpeg';
 import torta from '../../assets/images/doces/torta.jpeg';
-import ProductsService from '../../services/ProductsService';
-import { Loader } from '../../components/Loader';
-import ErrorStatus from '../../components/ErrorStatus';
 
 export default function Doces() {
-  const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
-
-  const cakes = useMemo(() => products.filter((product) => (
-    product.category.name === 'Bolos'
-  )), [products]);
-
-  const candys = useMemo(() => products.filter((product) => (
-    product.category.name === 'Docinhos'
-  )), [products]);
-
-  const desserts = useMemo(() => products.filter((product) => (
-    product.category.name === 'Sobremesas'
-  )), [products]);
-
-  const loadProducts = useCallback(async () => {
-    try {
-      setIsLoading(true);
-
-      const productsList = await ProductsService.listProducts();
-
-      setHasError(false);
-      setProducts(productsList);
-    } catch {
-      setHasError(true);
-      setProducts([]);
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    loadProducts();
-  }, [loadProducts]);
-
-  function handleTryAgain() {
-    loadProducts();
-  }
+  const {
+    isLoading,
+    hasError,
+    cakes,
+    candys,
+    desserts,
+    handleTryAgain,
+  } = useDoces();
 
   const images = [
     {

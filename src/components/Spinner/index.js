@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-
 import { StyledSpinner } from './style';
 
 export default function Spinner({ size = 32 }) {
