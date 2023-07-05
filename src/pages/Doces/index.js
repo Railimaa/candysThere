@@ -8,12 +8,6 @@ import CarouselImages from '../../components/CarouselImages';
 import Card from '../../components/Card';
 import useDoces from './useDoces';
 
-import cupkake from '../../assets/images/doces/cupkake.jpeg';
-import bolo from '../../assets/images/doces/chocolate.jpeg';
-import doce from '../../assets/images/doces/doces.jpeg';
-import docinho from '../../assets/images/doces/docinho.jpeg';
-import torta from '../../assets/images/doces/torta.jpeg';
-
 export default function Doces() {
   const {
     isLoading,
@@ -26,19 +20,19 @@ export default function Doces() {
 
   const images = [
     {
-      id: '1', src: cupkake, alt: 'Cup',
+      id: '1', src: 'https://therecandys.s3.sa-east-1.amazonaws.com/doces/cupkake.jpeg', alt: 'cup',
     },
     {
-      id: '2', src: bolo, alt: 'Bolo',
+      id: '2', src: 'https://therecandys.s3.sa-east-1.amazonaws.com/doces/chocolate.jpeg', alt: 'Bolo',
     },
     {
-      id: '3', src: doce, alt: 'doce',
+      id: '3', src: 'https://therecandys.s3.sa-east-1.amazonaws.com/doces/doces.jpeg', alt: 'doce',
     },
     {
-      id: '4', src: docinho, alt: 'docinho',
+      id: '4', src: 'https://therecandys.s3.sa-east-1.amazonaws.com/doces/torta.jpeg', alt: 'pave',
     },
     {
-      id: '5', src: torta, alt: 'torta',
+      id: '5', src: 'https://therecandys.s3.sa-east-1.amazonaws.com/doces/docinho.jpeg', alt: 'docinho',
     },
   ];
 

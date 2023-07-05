@@ -9,15 +9,6 @@ import Card from '../../components/Card';
 
 import useSalgados from './useSalgados';
 
-import empadao from '../../assets/images/salgados/empadao.jpeg';
-import empadinha from '../../assets/images/salgados/empadinha.jpeg';
-import quiche from '../../assets/images/salgados/quiche.jpeg';
-
-// import queijo from '../../assets/images/salgados/queijo.png';
-// import frango from '../../assets/images/salgados/frango.png';
-// import burguer from '../../assets/images/salgados/burguer.png';
-// import marguerita from '../../assets/images/salgados/marguerita.png';
-
 export default function Salgados() {
   const {
     isLoading,
@@ -30,13 +21,13 @@ export default function Salgados() {
 
   const images = [
     {
-      id: '1', src: empadao, alt: 'empadao',
+      id: '1', src: 'https://therecandys.s3.sa-east-1.amazonaws.com/salgados/empadao.jpeg', alt: 'empadao',
     },
     {
-      id: '2', src: empadinha, alt: 'empadinha',
+      id: '2', src: 'https://therecandys.s3.sa-east-1.amazonaws.com/salgados/empadinha.jpeg', alt: 'empadinha',
     },
     {
-      id: '3', src: quiche, alt: 'quiche',
+      id: '3', src: 'https://therecandys.s3.sa-east-1.amazonaws.com/salgados/quiche.jpeg', alt: 'quiche',
     },
   ];
 
