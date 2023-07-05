@@ -1,4 +1,5 @@
 name: docesthere.com CI
+
 on:
   push:
     branches:
@@ -10,13 +11,10 @@ jobs:
     steps:
       - name: Checkout to repository
         uses: actions/checkout@v2
-      - name: Deploy from my host
-        uses: easingthemes/ssh-deploy@main
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-rltgoDzvO --delete"
-          SOURCE: "src/"
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}
+
+      - name: Install lftp
+        run: sudo apt-get install lftp -y
+
+      - name: Deploy to server
+        run: |
+          lftp -e "set ftp:ssl-allow no; open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }}; mirror -R ${{ secrets.LOCAL_PATH }} ${{ secrets.REMOTE_PATH }}; exit"
