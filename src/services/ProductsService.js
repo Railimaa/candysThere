@@ -3,7 +3,7 @@ import ProductMapper from './mappers/ProductMapper';
 
 class ProductServer {
   constructor() {
-    this.httpClient = new HttpClient('http://localhost:3000');
+    this.httpClient = new HttpClient('http://localhost:3001');
   }
 
   async listProducts() {
