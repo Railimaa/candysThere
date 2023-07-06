@@ -2,6 +2,7 @@
 import { Container } from './style';
 
 import Loader from '../../components/Loader';
+import ErrorStatus from '../../components/ErrorStatus';
 import PageHeader from '../../components/PageHeader';
 import CarouselImages from '../../components/CarouselImages';
 import Card from '../../components/Card';
@@ -14,6 +15,7 @@ export default function Doces() {
     cakes,
     candys,
     desserts,
+    handleTryAgain,
   } = useDoces();
 
   const images = [
@@ -39,12 +41,14 @@ export default function Doces() {
       <Loader isLoading={isLoading} />
 
       {hasError && (
-        <CarouselImages images={images} />
+        <ErrorStatus onTryAgain={handleTryAgain} />
       )}
 
       {!hasError && (
         <>
           <PageHeader title="Uma Jornada Irresistível de Sabores!" />
+
+          <CarouselImages images={images} />
 
           <Card
             title="Transforme seu dia em uma festa com nossos bolos !"
