@@ -3,7 +3,7 @@ import ProductMapper from './mappers/ProductMapper';
 
 class ProductServer {
   constructor() {
-    this.httpClient = new HttpClient('https://2fc7-190-11-223-84.ngrok-free.app');
+    this.httpClient = new HttpClient('http://localhost:3000');
   }
 
   async listProducts() {
