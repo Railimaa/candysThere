@@ -41,14 +41,16 @@ export default function Doces() {
       <Loader isLoading={isLoading} />
 
       {hasError && (
-        <ErrorStatus onTryAgain={handleTryAgain} />
+        <>
+          <ErrorStatus onTryAgain={handleTryAgain} />
+          <CarouselImages images={images} />
+
+        </>
       )}
 
       {!hasError && (
         <>
           <PageHeader title="Uma Jornada Irresistível de Sabores!" />
-
-          <CarouselImages images={images} />
 
           <Card
             title="Transforme seu dia em uma festa com nossos bolos !"
