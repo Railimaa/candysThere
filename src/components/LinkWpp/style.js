@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  padding: 0 16px;
+
   a {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 4px;
 
       color: ${({ theme }) => theme.colors.terc};
