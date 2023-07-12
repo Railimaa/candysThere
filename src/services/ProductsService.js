@@ -3,7 +3,7 @@ import ProductMapper from './mappers/ProductMapper';
 
 class ProductServer {
   constructor() {
-    this.httpClient = new HttpClient('http://localhost:3001');
+    this.httpClient = new HttpClient('https://api.theredoces.com.br');
   }
 
   async listProducts() {
