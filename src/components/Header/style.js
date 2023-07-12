@@ -74,6 +74,7 @@ export const Infos = styled.div`
     margin-top: 10px;
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: center;
     flex-direction: column;
     color: ${({ theme }) => theme.colors.logo}
