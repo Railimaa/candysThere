@@ -93,7 +93,9 @@ export const CardItem = styled.div`
       white-space: pre-line;
   }
 
-
+  @media (min-width: 768px) {
+    padding: 20px 80px;
+  }
 
 `;
 
@@ -138,7 +140,5 @@ export const Item = styled.div`
       color: ${({ theme }) => theme.colors.sec};
     }
 
-    @media (min-width: 768px) {
-    padding: 20px 80px;
-  }
+
 `;
