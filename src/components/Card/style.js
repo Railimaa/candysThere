@@ -21,9 +21,7 @@ export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 
-  @media (max-width: 768px) {
-    margin: 0 10px; /* Adicione margens laterais menores em telas menores */
-  }
+
 `;
 
 export const Title = styled.div`
