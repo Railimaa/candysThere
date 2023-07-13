@@ -47,10 +47,9 @@ export const Title = styled.div`
 `;
 
 export const CardItem = styled.div`
-  padding: 20px 80px;
+  padding: 20px 10px;
   background: ${({ theme }) => theme.colors.main};
   overflow-x: auto;
-  white-space: nowrap;
   border-radius: 12px;
   display: flex;
   align-items: center;
