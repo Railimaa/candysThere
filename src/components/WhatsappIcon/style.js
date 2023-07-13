@@ -19,5 +19,12 @@ export const Container = styled.div`
 
     margin-right: 20px;
     margin-bottom: 20px;
+
+    @media (min-width: 1600px) and (min-height: 720px) {
+    a {
+      margin-right: 40px;
+      margin-bottom: 40px;
+    }
+  }
   }
 `;
