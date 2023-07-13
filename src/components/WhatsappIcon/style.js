@@ -22,8 +22,8 @@ export const Container = styled.div`
 
     @media (min-width: 1600px) and (min-height: 720px) {
     a {
-      margin-right: 40px;
-      margin-bottom: 40px;
+      margin-right: 30px;
+
     }
   }
   }
