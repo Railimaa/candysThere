@@ -45,7 +45,11 @@ export const Container = styled.div`
   padding: 24px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
   animation: ${scaleIn} 0.3s;
-  margin: 40px auto;
+  margin: 0 auto; /* Adicione esta linha para centralizar horizontalmente */
+  position: fixed; /* Adicione esta linha */
+  top: 50%; /* Adicione esta linha */
+  left: 50%; /* Adicione esta linha */
+  transform: translate(-50%, -50%); /* Adicione esta linha */
 
   ${({ isLeaving }) => isLeaving && css`animation: ${scaleOut} 0.2s forwards;`}
 
