@@ -56,9 +56,7 @@ export const CardItem = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  @media (min-width: 768px) {
-    padding: 20px 80px;
-  }
+
 
 
   & + & {
@@ -139,4 +137,8 @@ export const Item = styled.div`
     .kilo {
       color: ${({ theme }) => theme.colors.sec};
     }
+
+    @media (min-width: 768px) {
+    padding: 20px 80px;
+  }
 `;
