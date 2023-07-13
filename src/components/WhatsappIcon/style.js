@@ -17,7 +17,8 @@ export const Container = styled.div`
     z-index: 9999;
     text-decoration: none;
 
-
+    margin-right: 20px;
+    margin-bottom: 20px;
 
 
   }
