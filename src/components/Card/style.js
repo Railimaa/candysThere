@@ -49,6 +49,7 @@ export const Title = styled.div`
 export const CardItem = styled.div`
   padding: 20px 80px;
   background: ${({ theme }) => theme.colors.main};
+  overflow-x: auto;
   border-radius: 12px;
   display: flex;
   align-items: center;
