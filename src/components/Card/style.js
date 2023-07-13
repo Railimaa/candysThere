@@ -49,12 +49,15 @@ export const Title = styled.div`
 export const CardItem = styled.div`
   padding: 20px 10px;
   background: ${({ theme }) => theme.colors.main};
-  overflow-x: auto;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media (min-width: 768px) {
+    padding: 20px 80px;
+  }
 
 
 
@@ -93,9 +96,6 @@ export const CardItem = styled.div`
       white-space: pre-line;
   }
 
-  @media (min-width: 768px) {
-    padding: 20px 80px;
-  }
 
 `;
 
