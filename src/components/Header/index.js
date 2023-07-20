@@ -35,14 +35,17 @@ export default function Header() {
 
       <Nav>
         <div className="links">
+
           <Link to="/" className={activeLink === 'doces' ? 'active' : ''} onClick={() => handleClickLink('doces')}>
             Doces
             <img src={iconDoce} alt="doce" />
           </Link>
+
           <Link to="/salgados" className={activeLink === 'salgados' ? 'active' : ''} onClick={() => handleClickLink('salgados')}>
             Salgados
             <img src={iconSalg} alt="salgado" />
           </Link>
+
         </div>
       </Nav>
     </Container>
