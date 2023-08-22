@@ -10,7 +10,7 @@ export const Slide = styled(Slider)`
 
   .slick-prev:before,
   .slick-next:before {
-    color: ${({ theme }) => theme.colors.logo}; /* Altere a cor desejada aqui */
+    color: ${({ theme }) => theme.colors.logo};
   }
 
   @media (max-width: 468px) {
